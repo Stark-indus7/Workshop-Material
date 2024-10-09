@@ -1,4 +1,17 @@
 import random
+import functools
+
+# Decorator for decorations
+def greet(func):
+    """Decorator to run certain lines before and after the code!
+    """
+    @functools.wraps(func)
+    def decorator(*args,**kwargs):
+        print("Good Morning!")
+        result = func(*args,**kwargs)
+        print("Thanks for playing! Goodbye!")
+        return result
+    return decorator    
 
 def get_user_choice():
     """Get the user's choice."""
@@ -36,6 +49,7 @@ def play_game():
     result = determine_winner(user_choice, computer_choice)
     print(result + "\n")
 
+@greet
 def main():
     """Main function to run the Rock, Paper, Scissors game."""
     print("Welcome to Rock, Paper, Scissors!")
@@ -44,7 +58,6 @@ def main():
         play_game()
         again = input("Do you want to play again? (yes/no): ").lower()
         if again != 'yes':
-            print("Thanks for playing! Goodbye!")
             break
 
 if __name__ == "__main__":

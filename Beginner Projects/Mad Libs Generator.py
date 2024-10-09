@@ -1,8 +1,26 @@
 # Mad Libs Generator
+import functools
+
+
+def greet(func):
+    """Decorator to run certain lines before and after the code!
+    """
+    @functools.wraps(func)
+    def decorator(*args,**kwargs):
+        print("Good Morning!")
+        result = func(*args,**kwargs)
+        print("Thanks For Using Our Code!")
+        return result
+    return decorator    
 
 def get_word(prompt):
     """Prompt the user to enter a word."""
-    return input(f"Enter a {prompt}: ")
+    while True:
+        word = input(f"Enter a {prompt}: ").strip()
+        if word.isalpha() or word.isascii():
+            return word
+        else:
+            print("Invalid input. Please enter alphabetic characters only.")
 
 def create_story(adjective, noun, verb, adverb):
     """Create a story using the provided words."""
@@ -11,6 +29,8 @@ def create_story(adjective, noun, verb, adverb):
     )
     return story
 
+
+@greet
 def main():
     """Main function to run the Mad Libs Generator."""
     print("Welcome to the Mad Libs Generator!")
