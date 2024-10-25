@@ -15,7 +15,6 @@ def main():
         if s.lower() == 'q':
             print("Goodbye!")
             break
-        
         if is_palindrome(s):
             print(f"'{s}' is a palindrome!\n")
         else:

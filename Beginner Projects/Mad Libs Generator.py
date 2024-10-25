@@ -17,7 +17,7 @@ def get_word(prompt):
     """Prompt the user to enter a word."""
     while True:
         word = input(f"Enter a {prompt}: ").strip()
-        if word.isalpha() or word.isascii():
+        if word.isalpha():
             return word
         else:
             print("Invalid input. Please enter alphabetic characters only.")
