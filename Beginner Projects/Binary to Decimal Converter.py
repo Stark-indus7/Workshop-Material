@@ -1,7 +1,7 @@
 def binary_to_decimal(binary_str):
     """Convert a binary string to its decimal equivalent."""
     try:
-        decimal = int(binary_str, 2)
+        decimal = int(binary_str,2)
         return decimal
     except ValueError:
         return None
