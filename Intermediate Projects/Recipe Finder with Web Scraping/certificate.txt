@@ -1,0 +1,3 @@
+
+Congratulations on completing the Recipe Finder with Web Scraping project!
+This certificate recognizes your achievement in building this Python application.

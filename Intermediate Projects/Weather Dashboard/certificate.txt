@@ -1,0 +1,3 @@
+
+Congratulations on completing the Weather Dashboard project!
+This certificate recognizes your achievement in building this Python application.
