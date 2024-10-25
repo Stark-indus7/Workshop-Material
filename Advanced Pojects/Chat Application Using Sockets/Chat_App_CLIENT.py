@@ -70,7 +70,7 @@ def receive_messages():
         try:
             message = client.recv(HEADER).decode(FORMAT)
             print(message)
-        except:
+        except Exception:
             print("Connection closed.")
             break
 
